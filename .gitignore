@@ -1,0 +1,4 @@
+.env
+.virtual_enviroment
+__pycache__
+filtered_output.xlsx

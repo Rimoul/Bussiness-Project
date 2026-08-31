@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Login & Register</title>
+    <style>
+        /* A little bit of CSS to make the forms readable and separated */
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-section { 
+            margin-bottom: 30px; 
+            padding: 20px; 
+            border: 1px solid #ccc; 
+            max-width: 300px; 
+            border-radius: 8px;
+        }
+        input { 
+            display: block; 
+            margin-bottom: 10px; 
+            width: 90%; 
+            padding: 8px; 
+        }
+        button { padding: 10px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the Store</h1>
+
+ <!-- 1. The Login Section -->
+<div id="login-section">
+    <h2>Login</h2>
+    <input type="email" id="login-email" placeholder="Email">
+    <input type="password" id="login-password" placeholder="Password">
+    <button onclick="loginUser()">Login</button>
+</div>
+
+<hr>
+
+<!-- 2. The Registration Section -->
+<div id="register-section">
+    <h2>Sign Up</h2>
+    <input type="text" id="reg-username" placeholder="Username">
+    <input type="email" id="reg-email" placeholder="Email">
+    <input type="password" id="reg-password" placeholder="Password">
+    <button onclick="registerUser()">Sign Up</button>
+</div>
+
+<!-- 3. The OTP Section (Hidden by default) -->
+<div id="otp-section" style="display: none; border: 2px solid green; padding: 15px;">
+    <h2>Verify Your Email</h2>
+    <p>We just sent a 6-digit code to your email. It expires in 10 minutes.</p>
+    <input type="text" id="otp-code" placeholder="Enter 6-digit OTP">
+    <button onclick="verifyOTP()">Verify Account</button>
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>

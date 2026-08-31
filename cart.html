@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shopping Cart</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .cart-item { 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            margin-bottom: 10px; 
+            display: flex; 
+            gap: 20px; 
+            align-items: center; 
+        }
+        .cart-item img { max-width: 100px; }
+        .controls { display: flex; gap: 10px; }
+    </style>
+</head>
+<body>
+    <h1>My Cart</h1>
+    <div id="cart-container">Loading cart...</div>
+    <h2 id="cart-total">Total: $0.00</h2>
+
+    <!-- This links to the JS file we will create next -->
+    <script src="cart.js"></script>
+</body>
+</html>
