@@ -8,6 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 import models, schemas
 from database import engine, get_db
+from google.oauth2 import id_token
+from google.auth.transport import requests as google_requests
 
 # This line tells SQLAlchemy to create the tables in Postgres if they don't exist
 models.Base.metadata.create_all(bind=engine)
@@ -46,31 +48,41 @@ def send_email_otp(to_email: str, otp_code: str):
 @app.post("/register")
 def register_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     existing_user = db.query(models.User).filter(models.User.email == user.email).first()
-    if existing_user:
-        raise HTTPException(status_code=400, detail="Email already registered")
-    
-    # 1. Generate OTP and expiration
+
+    # 1. Generate the OTP and expiration right away
     otp = str(random.randint(100000, 999999))
     expire_time = datetime.utcnow() + timedelta(minutes=10)
-    
-    # 2. Save user with the OTP data
+
+    # 2. Check for existing users
+    if existing_user:
+        if existing_user.email_verified:
+            # Fully verified user -> Block them
+            raise HTTPException(status_code=400, detail="Email already registered. Please log in.")
+        else:
+            # UNVERIFIED PURGATORY FIX: Update their credentials and send a new OTP
+            existing_user.username = user.username
+            existing_user.password_hash = user.password
+            existing_user.email_otp = otp
+            existing_user.email_otp_expires = expire_time
+            db.commit()
+            db.refresh(existing_user)
+            send_email_otp(user.email, otp)
+            return {"message": "Account updated! Please check your email for the new OTP."}
+
+    # 3. Fresh user signup
     new_user = models.User(
-        username=user.username, 
-        email=user.email, 
+        username=user.username,
+        email=user.email,
         password_hash=user.password,
         email_otp=otp,
         email_otp_expires=expire_time
     )
-    
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
-    
-    # 3. Physically send the email
-    send_email_otp(user.email, otp)
-    
-    return {"message": "Account created! Please check your email for the OTP.", "user_id": new_user.id}
 
+    send_email_otp(user.email, otp)
+    return {"message": "Account created! Please check your email for the OTP.", "user_id": new_user.id}
 @app.post("/verify-email")
 def verify_email_otp(payload: schemas.OTPVerify, db: Session = Depends(get_db)):
     user = db.query(models.User).filter(models.User.email == payload.email).first()
@@ -93,7 +105,36 @@ def verify_email_otp(payload: schemas.OTPVerify, db: Session = Depends(get_db)):
     user.email_otp_expires = None
     db.commit()
     
-    return {"message": "Email successfully verified!"}
+    # Inside verify_email_otp, replace the final return with:
+    return {
+        "message": "Email successfully verified!",
+        "user_id": user.id,
+        "username": user.username
+    }
+
+@app.post("/resend-otp")
+def resend_email_otp(payload: schemas.OTPResend, db: Session = Depends(get_db)):
+    user = db.query(models.User).filter(models.User.email == payload.email).first()
+    
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+        
+    if user.email_verified:
+        raise HTTPException(status_code=400, detail="Email is already verified.")
+
+    # 1. Generate a new OTP and expiration
+    otp = str(random.randint(100000, 999999))
+    expire_time = datetime.utcnow() + timedelta(minutes=10)
+
+    # 2. Overwrite the old OTP in the database
+    user.email_otp = otp
+    user.email_otp_expires = expire_time
+    db.commit()
+
+    # 3. Physically send the new email
+    send_email_otp(user.email, otp)
+    
+    return {"message": "A fresh OTP has been sent to your email."}
 
 @app.post("/login")
 def login_user(user_credentials: schemas.UserLogin, db: Session = Depends(get_db)):
@@ -114,6 +155,48 @@ def login_user(user_credentials: schemas.UserLogin, db: Session = Depends(get_db
         "user_id": db_user.id, 
         "username": db_user.username
     }
+
+@app.post("/auth/google")
+def google_login(payload: schemas.GoogleToken, db: Session = Depends(get_db)):
+    try:
+        # 1. Verify the token with Google's servers
+        # Replace with your actual Google Client ID later
+        CLIENT_ID = "837375612904-t6bbgp46169t7qfvn5ho9kehrc6eldb2.apps.googleusercontent.com" 
+        
+        id_info = id_token.verify_oauth2_token(
+            payload.credential, 
+            google_requests.Request(), 
+            CLIENT_ID
+        )
+
+        # 2. Extract the user data Google guarantees is verified
+        email = id_info.get("email")
+        name = id_info.get("name", "Google User")
+
+        # 3. Check if user already exists in your database
+        user = db.query(models.User).filter(models.User.email == email).first()
+
+        if not user:
+            # Create a brand new user. No password needed, and email is pre-verified.
+            user = models.User(
+                username=name,
+                email=email,
+                auth_provider="google",
+                email_verified=True
+            )
+            db.add(user)
+            db.commit()
+            db.refresh(user)
+
+        # 4. Log them in
+        return {
+            "message": "Google Login successful", 
+            "user_id": user.id, 
+            "username": user.username
+        }
+
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid Google token")
 
 # ---------------- PRODUCT ROUTES ---------------- #
 

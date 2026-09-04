@@ -4,20 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My E-Commerce Store</title>
+    <!-- CSS is fully isolated in this linked file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>My Awesome Store</h1>
-        <div id="cart-info">Cart: 0 items</div>
+        
+        <!-- Groups the cart and profile menu together on the right side -->
+        <div class="header-controls">
+            <div id="cart-info">Cart: 0 items</div>
+            
+            <div class="profile-menu">
+                <div class="profile-icon" id="profile-icon" onclick="toggleDropdown()">?</div>
+                <div id="profile-dropdown" class="dropdown-content">
+                    <a href="#view-profile">View Profile</a>
+                    <a href="#edit-profile">Edit Profile</a>
+                    <a href="#" onclick="logoutUser()" style="color: #d9534f;">Sign Out</a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
+        <h3 id="welcome-message"></h3>
         <h2>Our Products</h2>
         <!-- The empty box waiting for JavaScript -->
         <div id="product-container"></div>
     </main>
 
-    <!-- THIS is the line that links your HTML to your Vanilla JS -->
+    <!-- Scripts loaded in order: auth state first, then page logic -->
+    /<script src="auth.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

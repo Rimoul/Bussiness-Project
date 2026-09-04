@@ -65,3 +65,9 @@ class CartItemUpdate(BaseModel):
 class OTPVerify(BaseModel):
     email: str
     otp_code: str
+
+class OTPResend(BaseModel):
+    email: str
+
+class GoogleToken(BaseModel):
+    credential: str
