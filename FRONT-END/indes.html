@@ -1,0 +1,96 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seazonal Swaad | Fresh & Authentic</title>
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        /* Minimal layout styles specific to the home page structure */
+        .navbar {
+            background-color: var(--color-brand);
+            padding: 16px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+            padding: 32px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            box-shadow: var(--shadow-card);
+            position: relative;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #E2E8F0; /* Placeholder for image */
+            border-radius: var(--radius-sm);
+            margin-bottom: 16px;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 8px 0 16px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header class="navbar">
+        <div class="navbar-brand">Seazonal Swaad</div>
+        <div class="navbar-search">
+            <!-- Search bar component will go here -->
+        </div>
+        <div class="navbar-cart">Cart (0)</div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="product-grid">
+            <!-- Example Product Card -->
+            <article class="product-card">
+                <span class="badge-sale" style="position: absolute; top: 24px; left: 24px;">15% Off</span>
+                <div class="product-image"></div>
+                <h3 class="product-title">Premium Saffron Pack</h3>
+                <p class="product-price">₹1,299</p>
+                <button class="btn-cta">Add to Cart</button>
+            </article>
+
+            <!-- Example Product Card 2 -->
+            <article class="product-card">
+                <div class="product-image"></div>
+                <h3 class="product-title">Organic Mangoes (1kg)</h3>
+                <p class="product-price">₹450</p>
+                <button class="btn-cta">Add to Cart</button>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/core/layout.js"></script>
+    <script src="js/pages/home.js"></script>
+</body>
+</html>
