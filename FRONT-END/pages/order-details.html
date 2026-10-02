@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details - Seazonal Swaad</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/order-details.css">
+</head>
+<body>
+
+    <!-- Header Injection -->
+    <div id="header-placeholder"></div>
+    
+    <main class="order-details-wrapper">
+        
+        <!-- Header Section -->
+        <div class="page-top-section">
+            <div class="title-block">
+                <h1 class="page-title">Order Details</h1>
+                <div class="title-divider">
+                    <svg viewBox="0 0 150 10" width="150" height="10">
+                        <line x1="0" y1="5" x2="150" y2="5" stroke="#C5A880" stroke-width="1"></line>
+                        <polygon points="75,2 78,5 75,8 72,5" fill="#C5A880"></polygon>
+                    </svg>
+                </div>
+                <p class="page-subtitle">View complete details of your order, track delivery and manage your order.</p>
+            </div>
+        </div>
+
+        <!-- Main Layout Grid -->
+        <section class="details-layout">
+            
+            <!-- LEFT COLUMN: Main Info -->
+            <div class="left-column">
+                
+                <!-- Order Header & Status -->
+                <div class="detail-card header-card">
+                    <div class="header-split">
+                        <div class="order-id-block">
+                            <h2 class="order-id-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                Order #SS1003
+                                <button class="btn-copy" title="Copy ID"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                            </h2>
+                            <p class="order-date">Placed on 01 Oct 2025, 06:24 PM</p>
+                        </div>
+                        <span class="status-badge badge-green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg> 
+                            Out for Delivery
+                        </span>
+                    </div>
+
+                    <!-- Status Alert Box -->
+                    <div class="status-alert">
+                        <div class="alert-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                        </div>
+                        <div class="alert-content">
+                            <h4>Order Status</h4>
+                            <h3>Your order is out for delivery.</h3>
+                            <p>Expected to be delivered today between 4:00 PM – 8:00 PM.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address & Payment Grid -->
+                <div class="info-grid">
+                    <div class="detail-card info-card">
+                        <div class="card-head">
+                            <h3><svg viewBox="0 0 24 24" fill="none" stroke="#C20A35" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Delivery Address</h3>
+                            <button class="btn-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Edit Address</button>
+                        </div>
+                        <h4 class="name">Ritankar Saha</h4>
+                        <p class="address-text">
+                            House No. 12, Lake View Road<br>
+                            Near Kalibari More, Roypur<br>
+                            Maheshtala, Kolkata - 700141<br>
+                            West Bengal, India
+                        </p>
+                        <p class="phone-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +91 98765 43210</p>
+                    </div>
+
+                    <div class="detail-card info-card">
+                        <div class="card-head">
+                            <h3><svg viewBox="0 0 24 24" fill="none" stroke="#C20A35" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> Payment Information</h3>
+                        </div>
+                        <ul class="payment-list">
+                            <li><span>Payment Method</span> <strong><span class="upi-logo">UPI</span> (Google Pay)</strong></li>
+                            <li><span>Payment Status</span> <strong class="text-green"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Paid Successfully</strong></li>
+                            <li><span>Transaction ID</span> <strong>UPI1234567890</strong></li>
+                            <li><span>Paid on</span> <strong>01 Oct 2025, 06:24 PM</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <h3><svg viewBox="0 0 24 24" fill="none" stroke="#C20A35" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Order Items (1)</h3>
+                    </div>
+                    <div class="item-row">
+                        <img src="https://images.unsplash.com/photo-1599557434778-5d2bc3cbcc4b?q=80&w=150&auto=format&fit=crop" alt="Moong Dal Ladoo">
+                        <div class="item-details">
+                            <div class="title-bar">
+                                <h4>Moong Dal Ladoo</h4>
+                                <span class="tag tag-traditional">Traditional Sweet</span>
+                            </div>
+                            <span class="weight">250 g</span>
+                            <p class="desc">Rich, buttery and melt-in-the-mouth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price Details -->
+                <div class="detail-card price-card">
+                    <div class="card-head">
+                        <h3><svg viewBox="0 0 24 24" fill="none" stroke="#C20A35" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Price Details</h3>
+                    </div>
+                    <div class="price-list">
+                        <div class="price-row"><span>Item Total (1 item)</span> <strong>₹260</strong></div>
+                        <div class="price-row"><span>Discount</span> <strong class="text-green">- ₹50</strong></div>
+                        <div class="price-row"><span>Delivery Charge</span> <strong>₹49</strong></div>
+                    </div>
+                    <div class="price-total">
+                        <span>Total Paid</span>
+                        <strong>₹259</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Sidebar Actions -->
+            <div class="right-column">
+                
+                <!-- Summary Snapshot -->
+                <div class="sidebar-widget snapshot-widget">
+                    <img src="https://images.unsplash.com/photo-1599557434778-5d2bc3cbcc4b?q=80&w=150&auto=format&fit=crop" alt="Moong Dal Ladoo">
+                    <div class="snapshot-info">
+                        <h4>Moong Dal Ladoo</h4>
+                        <span class="weight">250 g</span>
+                        <strong class="price">₹260</strong>
+                        <span class="qty">Qty: 1</span>
+                    </div>
+                </div>
+
+                <!-- Actions Group -->
+                <div class="sidebar-widget actions-widget">
+                    <button class="btn-action btn-filled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Track Order</button>
+                    
+                    <div class="action-group">
+                        <button class="btn-action btn-outline-danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> Cancel Order</button>
+                        <p class="helper-text">Available until the order is shipped.</p>
+                    </div>
+
+                    <div class="action-group">
+                        <button class="btn-action btn-outline disabled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Return / Refund</button>
+                        <p class="helper-text">Available after delivery.</p>
+                    </div>
+
+                    <button class="btn-action btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Download Invoice</button>
+                    <button class="btn-action btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg> Need Help?</button>
+                </div>
+
+                <!-- Policies Widget -->
+                <div class="sidebar-widget policies-widget">
+                    <h3><svg viewBox="0 0 24 24" fill="none" stroke="#C20A35" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Our Policies</h3>
+                    <ul class="policy-links">
+                        <li><a href="#">Cancellation Policy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+                        <li><a href="#">Returns & Refunds <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+                        <li><a href="#">Shipping Policy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+                        <li><a href="#">Terms & Conditions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHARED BOTTOM BANNER -->
+        <div class="shared-bottom-wrapper">
+            <div class="wave-divider">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C320,120 420,0 720,60 C1020,120 1120,0 1440,60 L1440,120 L0,120 Z" fill="#3A100E"></path></svg>
+            </div>
+            <section class="shared-bottom-banner">
+                <svg class="banner-icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.5"><path d="M12 2c0 0-4 4-4 10s4 10 4 10 4-4 4-10-4-10-4-10z"></path></svg>
+                <h2>Bringing the taste of tradition<br>closer to you.</h2>
+                <div class="hero-divider center-div"><svg viewBox="0 0 150 10" width="150" height="10"><line x1="0" y1="5" x2="150" y2="5" stroke="#C5A880" stroke-width="1"></line><circle cx="75" cy="5" r="3" fill="#C5A880"></circle></svg></div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer Injection -->
+    <div id="footer-placeholder"></div>
+    
+    <script src="/js/core/components.js"></script>
+    <script src="/js/core/layout.js"></script>
+    <script src="/js/core/router.js"></script>
+</body>
+</html>

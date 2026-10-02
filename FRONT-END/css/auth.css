@@ -1,0 +1,308 @@
+/* /css/auth.css */
+
+.auth-page-wrapper {
+    font-family: 'Georgia', serif; 
+    background-color: #FDF9EE;
+    min-height: calc(100vh - 85px); 
+    display: flex;
+    flex-direction: column; /* Force elements to stack vertically */
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0; /* Removed padding so the banner touches the bottom edge */
+}
+
+/* ============================
+   BACKGROUND DECORATIONS
+   ============================ */
+.corner-mandala {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.corner-mandala.top-left {
+    top: -50px;
+    left: -50px;
+}
+
+.corner-mandala.bottom-right {
+    bottom: -50px;
+    right: -50px;
+}
+
+.corner-leaf {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.corner-leaf.top-right {
+    top: 10%;
+    right: 15%;
+    transform: rotate(45deg);
+}
+
+.corner-leaf.bottom-left {
+    bottom: 10%;
+    left: 15%;
+    transform: rotate(-135deg);
+}
+
+/* ============================
+   AUTH CARD STRUCTURE
+   ============================ */
+.auth-card {
+    background-color: #FFFDF7;
+    width: 100%;
+    max-width: 450px;
+    padding: 45px 40px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(92, 30, 27, 0.06), 0 1px 3px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 10;
+    margin: auto; /* Automatically centers the card both vertically and horizontally */
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-logo-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.auth-title {
+    font-size: 2.2rem;
+    color: #5C1E1B;
+    margin: 0 0 8px 0;
+    font-weight: normal;
+}
+
+.auth-subtitle {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    color: #6C3D38;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ============================
+   FORM INPUTS
+   ============================ */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-icon.left {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #5C1E1B;
+    pointer-events: none;
+}
+
+.auth-form input {
+    width: 100%;
+    background-color: #FDF9EE;
+    border: 1px solid rgba(140, 43, 34, 0.15);
+    border-radius: 6px;
+    padding: 14px 16px 14px 45px;
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    color: #5C1E1B;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #8C2B22;
+    background-color: #FFFDF7;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #5C1E1B;
+    display: flex;
+}
+
+.password-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+.forgot-password-row {
+    text-align: right;
+    margin-top: -6px;
+    margin-bottom: 4px;
+}
+
+.forgot-link {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #5C1E1B;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* ============================
+   BUTTONS
+   ============================ */
+.btn-primary {
+    background-color: #5C1E1B;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 1.05rem;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #3A100E;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: #8C2B22;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(140, 43, 34, 0.15);
+}
+
+.auth-divider span {
+    padding: 0 15px;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #5C1E1B;
+    border: 1px solid rgba(140, 43, 34, 0.2);
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 0.95rem;
+    font-family: system-ui, sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #FDF9EE;
+}
+
+.auth-footer-text {
+    text-align: center;
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: #6C3D38;
+    margin: 30px 0 0 0;
+}
+
+.signup-link {
+    color: #5C1E1B;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+/* ============================
+   BOTTOM WAVE BANNER
+   ============================ */
+.auth-bottom-wrapper {
+    background-color: #FDF9EE;
+    position: relative;
+    width: 100%;
+    margin-top: auto; /* Pushes the banner to the absolute bottom of the screen */
+}
+
+.wave-divider {
+    background-color: #FDF9EE;
+    line-height: 0;
+}
+
+.wave-divider svg {
+    width: 100%;
+    height: 60px;
+    display: block;
+}
+
+.auth-bottom-banner {
+    background-color: #3A100E;
+    color: #FFFDF7;
+    text-align: center;
+    padding: 10px 20px 40px;
+}
+
+.auth-bottom-banner .banner-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.auth-bottom-banner h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+    line-height: 1.4;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;
+}

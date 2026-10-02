@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order - Seazonal Swaad</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/track-order.css">
+</head>
+<body>
+
+    <!-- Header Injection -->
+    <div id="header-placeholder"></div>
+    
+    <main class="track-order-wrapper">
+        
+        <!-- Header Section -->
+        <div class="page-top-section">
+            <div class="title-block">
+                <h1 class="page-title">Track Order</h1>
+                <div class="title-divider">
+                    <svg viewBox="0 0 150 10" width="150" height="10">
+                        <line x1="0" y1="5" x2="150" y2="5" stroke="#C5A880" stroke-width="1"></line>
+                        <polygon points="75,2 78,5 75,8 72,5" fill="#C5A880"></polygon>
+                    </svg>
+                </div>
+                <p class="page-subtitle">Check the latest status and estimated delivery time for your order.</p>
+            </div>
+        </div>
+
+        <!-- Main Layout Grid -->
+        <section class="track-layout">
+            
+            <!-- LEFT COLUMN: Order Info & Timeline -->
+            <div class="left-column">
+                
+                <!-- Order Overview Card -->
+                <div class="track-card">
+                    <div class="card-head order-head">
+                        <div class="order-id-block">
+                            <h2>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#8C2B22" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                Order #SS1003
+                            </h2>
+                            <p class="order-date">Placed on 01 Oct 2025, 06:24 PM</p>
+                        </div>
+                        <span class="status-badge badge-green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg> 
+                            Out for Delivery
+                        </span>
+                    </div>
+                    
+                    <div class="product-snapshot">
+                        <img src="https://images.unsplash.com/photo-1599557434778-5d2bc3cbcc4b?q=80&w=150&auto=format&fit=crop" alt="Moong Dal Ladoo">
+                        <div class="snapshot-details">
+                            <div class="title-row">
+                                <h3>Moong Dal Ladoo</h3>
+                                <span class="tag tag-traditional">Traditional Sweet</span>
+                            </div>
+                            <span class="weight">250 g</span>
+                            <span class="price">₹260</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vertical Tracking Timeline Card -->
+                <div class="track-card">
+                    <div class="card-head">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#8C2B22" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                            Order Tracking
+                        </h3>
+                    </div>
+
+                    <div class="vertical-timeline">
+                        
+                        <!-- Step 1 -->
+                        <div class="track-step completed">
+                            <div class="step-indicator">
+                                <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                                <div class="step-line"></div>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-main">
+                                    <h4>Order Placed</h4>
+                                    <span class="step-date">01 Oct 2025, 06:24 PM</span>
+                                </div>
+                                <div class="step-desc">Your order has been placed successfully.</div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="track-step completed">
+                            <div class="step-indicator">
+                                <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                                <div class="step-line"></div>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-main">
+                                    <h4>Packed</h4>
+                                    <span class="step-date">02 Oct 2025, 09:10 AM</span>
+                                </div>
+                                <div class="step-desc">Your order has been packed and is ready for shipment.</div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="track-step completed">
+                            <div class="step-indicator">
+                                <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                                <div class="step-line"></div>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-main">
+                                    <h4>Shipped</h4>
+                                    <span class="step-date">02 Oct 2025, 05:30 PM</span>
+                                </div>
+                                <div class="step-desc">Your order has been shipped from our store.</div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 (Current) -->
+                        <div class="track-step current">
+                            <div class="step-indicator">
+                                <div class="step-icon"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"></circle></svg></div>
+                                <div class="step-line"></div>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-main text-green">
+                                    <h4>Out for Delivery</h4>
+                                    <span class="step-date">03 Oct 2025, 10:15 AM</span>
+                                </div>
+                                <div class="step-desc text-green">Your order is out for delivery and will reach you today.</div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 (Pending) -->
+                        <div class="track-step pending">
+                            <div class="step-indicator">
+                                <div class="step-icon"></div>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-main">
+                                    <h4>Delivered</h4>
+                                    <span class="step-date">Pending</span>
+                                </div>
+                                <div class="step-desc">Your order will be delivered soon.</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Delivery Estimate Alert Box -->
+                    <div class="delivery-alert">
+                        <div class="alert-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                        </div>
+                        <div class="alert-text">
+                            <strong>Expected Delivery: Today, 03 Oct 2025</strong>
+                            <span>Arriving between 4:00 PM - 8:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: Sidebar Summary & Address -->
+            <div class="right-column">
+                
+                <!-- Order Summary Widget -->
+                <div class="sidebar-widget">
+                    <div class="widget-head">
+                        <h3><svg viewBox="0 0 24 24" fill="none" stroke="#8C2B22" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg> Order Summary</h3>
+                    </div>
+                    
+                    <div class="mini-snapshot">
+                        <img src="https://images.unsplash.com/photo-1599557434778-5d2bc3cbcc4b?q=80&w=150&auto=format&fit=crop" alt="Moong Dal Ladoo">
+                        <div class="mini-details">
+                            <h4>Moong Dal Ladoo</h4>
+                            <span>250 g | Qty: 1</span>
+                            <strong>₹260</strong>
+                        </div>
+                    </div>
+
+                    <div class="price-list">
+                        <div class="price-row"><span>Subtotal</span> <strong>₹260</strong></div>
+                        <div class="price-row"><span>Discount</span> <strong class="text-green">- ₹50</strong></div>
+                        <div class="price-row"><span>Delivery Charge</span> <strong>₹49</strong></div>
+                    </div>
+                    
+                    <div class="price-total">
+                        <span>Total Paid</span>
+                        <strong>₹259</strong>
+                    </div>
+
+                    <!-- NEW: View Details Button -->
+                    <a href="/pages/order-details.html" class="btn-outline w-100" style="margin-top: 20px; text-decoration: none;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                        View Details
+                    </a>
+                </div>
+
+                <!-- Delivery Address Widget -->
+                <div class="sidebar-widget">
+                    <div class="widget-head">
+                        <h3><svg viewBox="0 0 24 24" fill="none" stroke="#8C2B22" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Delivery Address</h3>
+                    </div>
+                    <div class="address-content">
+                        <h4>Ritankar Saha</h4>
+                        <p class="address-text">
+                            House No. 12, Lake View Road,<br>
+                            Near Kalibari More, Roypur,<br>
+                            Maheshtala, Kolkata - 700141<br>
+                            West Bengal, India
+                        </p>
+                        <p class="phone-text">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            +91 98765 43210
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Need Help Widget -->
+                <div class="sidebar-widget help-widget">
+                    <div class="help-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#8C2B22" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                        <h3>Need Help?</h3>
+                    </div>
+                    <p>Facing any issues with your order?</p>
+                    <button class="btn-outline w-100">Contact Support</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SHARED BOTTOM BANNER -->
+        <div class="shared-bottom-wrapper">
+            <div class="wave-divider">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C320,120 420,0 720,60 C1020,120 1120,0 1440,60 L1440,120 L0,120 Z" fill="#3A100E"></path></svg>
+            </div>
+            <section class="shared-bottom-banner">
+                <svg class="banner-icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.5"><path d="M12 2c0 0-4 4-4 10s4 10 4 10 4-4 4-10-4-10-4-10z"></path></svg>
+                <h2>Bringing the taste of tradition<br>closer to you.</h2>
+                <div class="hero-divider center-div"><svg viewBox="0 0 150 10" width="150" height="10"><line x1="0" y1="5" x2="150" y2="5" stroke="#C5A880" stroke-width="1"></line><circle cx="75" cy="5" r="3" fill="#C5A880"></circle></svg></div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer Injection -->
+    <div id="footer-placeholder"></div>
+    
+    <script src="/js/core/components.js"></script>
+    <script src="/js/core/layout.js"></script>
+    <script src="/js/core/router.js"></script>
+</body>
+</html>

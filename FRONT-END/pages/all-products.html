@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Seazonal Swaad</title>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/all-products.css">
+</head>
+<body>
+
+    <!-- Header Injection -->
+    <div id="header-placeholder"></div>
+    
+    <main class="products-page-wrapper">
+        
+        <!-- TOP FILTER & SORT BAR -->
+        <section class="products-top-bar">
+            <div class="filter-pills">
+                <button class="filter-pill active">All Products</button>
+                <button class="filter-pill">Festive Specials</button>
+                <button class="filter-pill">Traditional Sweets</button>
+                <button class="filter-pill">Snacks</button>
+                <button class="filter-pill">Seasonal</button>
+            </div>
+            <div class="sort-dropdown-container">
+                <select class="sort-dropdown">
+                    <option value="featured">Sort by: Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="newest">Newest Arrivals</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- PRODUCT GRID -->
+        <section class="product-grid" id="product-grid">
+            
+            <!-- Card 1: diwali Special Patisapta -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="/media/patisapta.png" alt="Poush parbon Special Patisapta" class="product-img" style="background-color: #E5D9C5;">
+                    <span class="category-badge badge-festive">Festive Special</span>
+                    <button class="wishlist-btn" aria-label="Add to wishlist">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Poush parbon Special Patisapta</h3>
+                    <p class="product-desc">Soft, delicate, and filled with sweet nostalgia.<br>A timeless festive favourite.</p>
+                    <div class="product-price-row">
+                        <span class="price">₹ 220</span>
+                        <span class="divider">|</span>
+                        <span class="weight">250 g</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                            Add to Cart
+                        </button>
+                        <a href="#" class="view-details-link">View Details &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Mysore Pak -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="/media/mysore_pak.png" alt="Mysore Pak" class="product-img" style="background-color: #E5D9C5;">
+                    <span class="category-badge badge-traditional">Traditional Sweet</span>
+                    <button class="wishlist-btn" aria-label="Add to wishlist">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Mysore Pak</h3>
+                    <p class="product-desc">Rich, buttery and melt-in-the-mouth.<br>A royal treat for special occasions.</p>
+                    <div class="product-price-row">
+                        <span class="price">₹ 280</span>
+                        <span class="divider">|</span>
+                        <span class="weight">250 g</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                            Add to Cart
+                        </button>
+                        <a href="/pages/product.html" class="view-details-link">View Details &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Narkel Naru -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="/media/narkel_naru.png" alt="Narkel Naru" class="product-img" style="background-color: #E5D9C5;">
+                    <span class="category-badge badge-traditional">Traditional Sweet</span>
+                    <button class="wishlist-btn" aria-label="Add to wishlist">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Narkel Naru</h3>
+                    <p class="product-desc">Fresh coconut, pure taste.<br>A classic Bengali delight.</p>
+                    <div class="product-price-row">
+                        <span class="price">₹ 180</span>
+                        <span class="divider">|</span>
+                        <span class="weight">200 g</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                            Add to Cart
+                        </button>
+                        <a href="#" class="view-details-link">View Details &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- GLOBAL BOTTOM BANNER WITH WAVE -->
+       <!-- PRODUCTS BOTTOM BANNER WITH WAVE -->
+       
+       <div class="products-bottom-wrapper">
+           <div class="wave-divider">
+               <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C320,120 420,0 720,60 C1020,120 1120,0 1440,60 L1440,120 L0,120 Z" fill="#3A100E"></path></svg>
+           </div>
+           <section class="products-bottom-banner">
+               <svg class="banner-icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.5"><path d="M12 2c0 0-4 4-4 10s4 10 4 10 4-4 4-10-4-10-4-10z"></path></svg>
+               <h2>Bringing the taste of tradition<br>closer to you.</h2>
+               <div class="hero-divider center-div"><svg viewBox="0 0 150 10" width="150" height="10"><line x1="0" y1="5" x2="150" y2="5" stroke="#C5A880" stroke-width="1"></line><circle cx="75" cy="5" r="3" fill="#C5A880"></circle></svg></div>
+           </section>
+       </div>
+    </main>
+
+    </main>
+
+    <!-- Footer Injection -->
+    <div id="footer-placeholder"></div>
+    
+    <script src="/js/core/components.js"></script>
+    <script src="/js/core/layout.js"></script>
+    <script src="/js/core/router.js"></script>
+</body>
+</html>

@@ -155,3 +155,25 @@ window.addEventListener('resize', function() {
         }
     }
 });
+
+// =========================================
+// AUTO-CLOSE SIDEBAR ON LINK CLICK
+// =========================================
+document.addEventListener('click', (e) => {
+    // Check if the clicked element is a link inside the dropdown menu
+    const menuLink = e.target.closest('.header-dropdown-menu a');
+    
+    if (menuLink) {
+        const menu = document.getElementById('dropdownMenu');
+        const hamburger = document.querySelector('.icon-hamburger');
+        const closeIcon = document.querySelector('.icon-close');
+        
+        // Remove the active classes and reset the icons
+        menu.classList.remove('active');
+        hamburger.style.display = 'block';
+        closeIcon.style.display = 'none';
+        
+        // Unlock the background scrolling
+        document.body.classList.remove('no-scroll'); 
+    }
+});
